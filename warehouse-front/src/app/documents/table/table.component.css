@@ -1,0 +1,8 @@
+.text-custom {
+    color: #3F2B96;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background-color: #A8C0FF;
+    color: white;
+}

@@ -1,0 +1,15 @@
+<div class="row bg-docs">
+    <div class="col-12">
+        <div class="float-left mt-3 pl-3">
+            <wh-pagination (pageChange)="updateParams($event)" [size]="documents?.count" [page]="parameters.page" [pageSize]="parameters.pageSize"></wh-pagination>
+        </div>
+        <div class="float-right mt-3 pr-3">
+            <wh-table-settings (visibilityChange)="updateVisibility($event)"></wh-table-settings>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <wh-table (sortChange)="updateParams($event)" [visibility]="visibility" [documents]="documents?.results"></wh-table>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th *ngIf="visibility.doc" class="text-custom" (click)="updateSort('dateOfCreation')">Date of Creation <i *ngIf="sort != 'dateOfCreation'" class="fa fa-sort"></i><i *ngIf="sortDirection == 'desc' && sort == 'dateOfCreation'" class="fa fa-sort-desc"></i><i *ngIf="sortDirection == 'asc' && sort == 'dateOfCreation'" class="fa fa-sort-asc"></i></th>
+        <th *ngIf="visibility.dor" class="text-custom" (click)="updateSort('dateOfRecording')">Date of Recording <i *ngIf="sort != 'dateOfRecording'" class="fa fa-sort"></i><i *ngIf="sortDirection == 'desc' && sort == 'dateOfRecording'" class="fa fa-sort-desc"></i><i *ngIf="sortDirection == 'asc' && sort == 'dateOfRecording'" class="fa fa-sort-asc"></i></th>
+        <th *ngIf="visibility.status" class="text-custom" (click)="updateSort('status')">Status <i *ngIf="sort != 'status'" class="fa fa-sort"></i><i *ngIf="sortDirection == 'desc' && sort == 'status'" class="fa fa-sort-desc"></i><i *ngIf="sortDirection == 'asc' && sort == 'status'" class="fa fa-sort-asc"></i></th>
+        <th *ngIf="visibility.trans" class="text-custom" (click)="updateSort('transactionType')">Transaction Type <i *ngIf="sort != 'transactionType'" class="fa fa-sort"></i><i *ngIf="sortDirection == 'desc' && sort == 'transactionType'" class="fa fa-sort-desc"></i><i *ngIf="sortDirection == 'asc' && sort == 'transactionType'" class="fa fa-sort-asc"></i></th>
+        <th *ngIf="visibility.bp">Business Partner</th>
+        <th *ngIf="visibility.bpl">Business Partner Location</th>
+        <th *ngIf="visibility.year">Year</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let document of documents" [routerLink]="['/documents/', document?._id]"
+        routerLinkActive="router-link-active">
+            <td *ngIf="visibility.doc">{{document?.dateOfCreation | date: 'MMM d, y'}}</td>
+            <td *ngIf="visibility.dor">{{document?.dateOfRecording | date: 'MMM d, y'}}</td>
+            <td *ngIf="visibility.status">{{document?.status}}</td>
+            <td *ngIf="visibility.trans">{{document?.transactionType}}</td>
+            <td *ngIf="visibility.bp">{{document?.businessPartner.name}}</td>
+            <td *ngIf="visibility.bpl">{{document?.businessPartner.city}}, {{document?.businessPartner.address}}</td>
+            <td *ngIf="visibility.year">{{document?.year}}</td>
+        </tr>
+    </tbody>
+  </table>

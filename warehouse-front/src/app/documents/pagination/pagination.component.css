@@ -1,0 +1,15 @@
+/deep/ .pagination .page-link {
+    border-top-style: none !important;
+    border-bottom-style: none !important;
+    background-color: white !important;
+    color: #3F2B96 !important;
+    font-weight: bold;
+
+}
+
+/deep/  .pagination .page-item.active .page-link {
+    background-color: #3F2B96 !important;
+    color: white !important;
+    border: none !important;
+    font-weight: bold;
+}

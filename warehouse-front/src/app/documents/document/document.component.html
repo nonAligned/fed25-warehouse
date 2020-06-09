@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-12">
+        <wh-data-panel [document]="document"></wh-data-panel>
+    </div>
+</div>
+<div class="row">
+    <div [ngClass]="{'col-8': document?.status != 'recorded', 'col-12': document?.status == 'recorded'}">
+        <wh-items-table [items]="items?.results"></wh-items-table>
+    </div>
+    <div class="col-4" *ngIf="document?.status != 'recorded'">
+        <wh-add-item [articles]="articles?.results" (itemSubmit)="addItem($event)"></wh-add-item>
+    </div>
+</div>

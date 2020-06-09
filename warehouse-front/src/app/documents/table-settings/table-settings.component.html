@@ -1,0 +1,26 @@
+<div class="bg-white rounded-left">
+    <div class="form-check form-check-inline pl-3" *ngIf="open">
+        <label for="doc" class="form-check-label">Date of Creation</label>
+        <input id="doc" class="form-check-input" type="checkbox" name="doc" checked [(ngModel)]="visibility.doc" (change)="updateVisible()">
+
+        <label for="dor" class="form-check-label">Date of Recording</label>
+        <input id="dor" class="form-check-input" type="checkbox" name="dor" checked [(ngModel)]="visibility.dor" (change)="updateVisible()">
+
+        <label for="status" class="form-check-label">Status</label>
+        <input id="status" class="form-check-input" type="checkbox" name="status" checked [(ngModel)]="visibility.status" (change)="updateVisible()">
+
+        <label for="trans" class="form-check-label">Transaction Type</label>
+        <input id="trans" class="form-check-input" type="checkbox" name="trans" checked [(ngModel)]="visibility.trans" (change)="updateVisible()">
+
+        <label for="bp" class="form-check-label">Business Partner</label>
+        <input id="bp" class="form-check-input" type="checkbox" name="bp" checked [(ngModel)]="visibility.bp" (change)="updateVisible()">
+
+        <label for="bpl" class="form-check-label">Business Partner Location</label>
+        <input id="bpl" class="form-check-input" type="checkbox" name="bpl" checked [(ngModel)]="visibility.bpl" (change)="updateVisible()">
+
+        <label for="year" class="form-check-label">Year</label>
+        <input id="year" class="form-check-input" type="checkbox" name="year" [(ngModel)]="visibility.year" (change)="updateVisible()">
+
+    </div>
+    <button (click)="toggleSettings()" class="btn" [ngClass]="{'btn-closed': !open, 'btn-open': open}"><span *ngIf="!open"><strong>Open table settings</strong></span><span *ngIf="open"><strong>Close table settings</strong></span></button>
+</div>

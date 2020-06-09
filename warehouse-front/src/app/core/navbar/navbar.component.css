@@ -1,0 +1,7 @@
+.bg-nav {
+    background-color: white;
+    box-shadow: 3px 3px 12px 0px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    color: rgb(74, 15, 151);
+    font-weight: 400;
+}

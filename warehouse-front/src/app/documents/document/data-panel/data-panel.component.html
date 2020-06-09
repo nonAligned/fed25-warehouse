@@ -1,0 +1,21 @@
+<div class="row bg-data pt-2 pb-4 px-3">
+    <div class="col-4">
+        <p class="text-uppercase"><strong>Transaction type: {{document?.transactionType}}</strong></p>
+        <p class="m-0"><small>Date of Creation: {{document?.dateOfCreation | date: 'EEEE, MMMM d, y'}}</small></p>
+        <p class="m-0" *ngIf="document?.status == 'recorded'"><small>Date of Recording: {{document?.dateOfRecording | date: 'EEEE, MMMM d, y'}}</small></p>
+    </div>
+    <div class="col-4">
+        <div class="text-center">
+            <p class="text-uppercase"><strong>Business Partner</strong></p>
+            <p class="m-0"><small>{{document?.businessPartner.name}}</small></p>
+            <p class="m-0"><small>{{document?.businessPartner.city}}, {{document?.businessPartner.address}}</small></p>
+        </div> 
+    </div>
+    <div class="col-4">
+        <div class="float-right">
+            <p class="text-uppercase text-right"><strong>Status: {{document?.status}}</strong></p>
+            <button class="btn btn-custom" *ngIf="document?.status != 'recorded'" (click)="recordDocument()"><strong>Record Document</strong></button>
+        </div>
+        
+    </div>
+</div>
